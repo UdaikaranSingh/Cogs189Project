@@ -1,0 +1,41 @@
+S*.mat:
+
+data{1,1} = eeg;
+data{2,1} = nirs;
+data{3,1} = evt;
+
+%% Sampling frequency EEG
+eeg{1,1} = Fs;
+%% Number of channels EEG
+eeg{2,1} = neegchan;
+%% Channel labels EEG
+eeg{3,1} = eeglabels;
+%% Time points EEG
+eeg{4,1} = tteeg;
+%% Raw signals (Time points x Nchannels) EEG
+eeg{5,1} = xxeegRaw;
+
+%% Sampling frequency NIRS
+nirs{1,1} = Fsnirs;
+%% Number of channels NIRS
+nirs{2,1} = nnirschan;
+%% Channel labels NIRS
+nirs{3,1} = nirslabels;
+%% Time points NIRS
+nirs{4,1} = ttnirs;
+%% Raw signals (Time points x Nchannels) wavelength 1 NIRS
+nirs{5,1} = wl1; 
+%% Raw signals (Time points x Nchannels) wavelength 2 NIRS
+nirs{6,1} = wl2;
+
+
+%% evt: Event matrix 
+% 1st column: time of the events (starting from 0 and synchronzed with EEG and NIRS signals)
+% 2nd column: code of the events:
+	10 -> starting block event (5 blocks of 20 trials each)
+	1  -> REST cue
+	3  -> RIGHT ARM
+	4  -> LEFT ARM
+	7  -> RIGHT HAND
+	8  -> LEFT HAND
+
